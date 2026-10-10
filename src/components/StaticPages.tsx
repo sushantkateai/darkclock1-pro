@@ -308,16 +308,25 @@ export const StaticPages: React.FC<StaticPagesProps> = ({ view, onNavigate, sett
           <div className="p-5 rounded-2xl bg-[#0A0A0A] border border-neutral-850">
             <h3 className="text-base font-bold text-white flex items-center gap-2 mb-2">
               <span className="w-6 h-6 rounded-full bg-[#4388FF] text-white text-xs flex items-center justify-center">2</span>
-              <span>Deploying Online (Vercel, Cloud Run, Netlify, Cloudflare)</span>
+              <span>Deploying to GitHub Pages (Fixing Blank Screen)</span>
             </h3>
             <p className="text-xs text-neutral-400 mb-3">
-              DarkClock Pro is a high-speed, lightweight static Vite SPA that deploys in seconds:
+              GitHub Pages hosts projects under a subdirectory path (<code className="text-neutral-200">username.github.io/repo-name/</code>). We've already configured <code className="text-[#4388FF]">base: './'</code> in <code className="text-neutral-200">vite.config.ts</code> so asset URLs resolve relatively and never 404.
             </p>
-            <ul className="list-disc pl-5 text-xs text-neutral-400 space-y-1.5">
-              <li><strong>Vercel / Netlify:</strong> Connect your Git repository, set build command to <code className="text-neutral-200">npm run build</code>, and output directory to <code className="text-neutral-200">dist</code>.</li>
-              <li><strong>Google Cloud Run:</strong> Build using the provided Docker/Cloud Build pipeline.</li>
-              <li><strong>Cloudflare Pages:</strong> Framework preset <code className="text-neutral-200">Vite</code>.</li>
-            </ul>
+            <div className="space-y-2 text-xs text-neutral-400">
+              <p><strong>Option A — Automated GitHub Actions (Recommended):</strong></p>
+              <ol className="list-decimal pl-5 space-y-1">
+                <li>Go to your GitHub repository on GitHub.com.</li>
+                <li>Click <strong>Settings &gt; Pages</strong>.</li>
+                <li>Under <strong>Build and deployment &gt; Source</strong>, choose <strong>GitHub Actions</strong>.</li>
+                <li>Push your repository's <code className="text-neutral-200">main</code> branch. The automated workflow in <code className="text-neutral-200">.github/workflows/deploy.yml</code> will build and launch your site live!</li>
+              </ol>
+
+              <p className="pt-2"><strong>Option B — Deploy with Vercel or Netlify:</strong></p>
+              <ul className="list-disc pl-5 space-y-1">
+                <li>Import your GitHub repo into Vercel or Netlify. Set build command to <code className="text-neutral-200">npm run build</code> and output directory to <code className="text-neutral-200">dist</code>.</li>
+              </ul>
+            </div>
           </div>
 
           {/* Step 3 */}
