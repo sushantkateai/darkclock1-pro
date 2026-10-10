@@ -1,0 +1,6 @@
+{
+  "name": "DarkClock Pro",
+  "description": "An all-in-one minimal, modern online clock, countdown timer, stopwatch, world clock, and alarm suite in a sleek dark theme.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
